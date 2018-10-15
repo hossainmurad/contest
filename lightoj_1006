@@ -1,0 +1,25 @@
+import java.util.*; 
+public class Main{   
+    public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+    int n, caseno = 0, cases;
+    long[] fn = new long[10005];
+    cases=scn.nextInt();
+    while( cases>0 ) {
+        cases--;
+        fn[0]=scn.nextInt();
+        fn[1]=scn.nextInt();
+        fn[2]=scn.nextInt();
+        fn[3]=scn.nextInt();
+        fn[4]=scn.nextInt();
+        fn[5]=scn.nextInt();
+        n=scn.nextInt();
+        
+        for(int i=6;i<=n;i++){
+            fn[i]=(fn[i-1]+fn[i-2]+fn[i-3]+fn[i-4]+fn[i-5]+fn[i-6])%10000007; 
+        }
+        caseno++;
+        System.out.println("Case "+caseno+": "+(fn[n] % 10000007));       
+    }
+  }   
+}
